@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Summarized Content</h2>
+        <p>{{ summary }}</p>
+
+        <h2>Flashcards</h2>
+        {% for q, a in flashcards %}
+            <div class="flashcard">
+                <strong>{{ q }}</strong><br>
+                {{ a }}
+            </div>
+        {% endfor %}
+        <a href="/">Upload Another PDF</a>
+    </div>
+</body>
+</html>
